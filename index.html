@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="https://sapica.com/wp-content/uploads/2020/01/sapicaICO.png" type="image/x-icon">
+
+  <title>Sala de prensa SAPICA</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .Header {
+      background-color: #000000;
+    }
+
+    .Header ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .Header li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .Header a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .HeaderTop a:hover,
+    .HeaderBot a:hover {
+      opacity: 0.75;
+      transition: 250ms;
+    }
+
+    .HeaderTop {
+      border-bottom: 2px solid #ffffff;
+    }
+
+    .HeaderTop__content {
+      height: 40px;
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .HeaderTop__menu {
+      font-size: 1.4rem;
+    }
+
+    .HeaderTop__rrss {
+      font-size: 1.6rem;
+    }
+
+    .HeaderMid__content {
+      height: 120px;
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .HeaderMid__Logo {
+      height: 60%;
+    }
+
+    .HeaderMid__Logo img {
+      height: 100%;
+    }
+
+    .HeaderMid__Banner {
+      height: 60%;
+    }
+
+    .HeaderMid__Banner img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .HeaderBot {
+      border-top: 2px solid #ffffff;
+    }
+
+    .HeaderBot a {
+      font-size: 1.6rem;
+    }
+
+    .HeaderBot__content {
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Main__content {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .UltimasNoticias {
+      margin-top: 20px;
+      display: flex;
+      font-size: 1.6rem;
+    }
+
+    .UltimasNoticias div {
+      padding: 16px 20px;
+    }
+
+    .UltimasNoticias div:nth-child(1) {
+      width: 20%;
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .UltimasNoticias div:nth-child(2) {
+      background-color: #eeeeee;
+      width: 80%;
+    }
+
+    .Carousel {
+      margin-top: 20px;
+    }
+
+    .Carousel__mainImg figure {
+      width: 100%;
+      height: 480px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    .Carousel__mainImg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .Carousel__mainImg figcaption {
+      position: absolute;
+      bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #ffffff;
+      width: 100%;
+      padding: 24px;
+    }
+
+    .Carousel__mainImg figcaption p:nth-child(1) {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .Carousel__mainImg figcaption p:nth-child(2) {
+      font-size: 1.6rem;
+    }
+
+    .Carousel__secondaryImgs {
+      height: 120px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .Carousel__secondaryImgs figure {
+      width: 19%;
+      height: 120px;
+    }
+
+    .Carousel__secondaryImgs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .Carousel__active img {
+      opacity: 1;
+    }
+
+    .Footer {
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin-top: 20px;
+      padding: 25px 0px 20px;
+    }
+
+    .Footer__content {
+      display: flex;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .Footer__column {
+      width: 33.33%;
+      margin-bottom: 20px;
+    }
+
+    .Footer__column:nth-child(2) {
+      text-align: center;
+    }
+
+    .Footer__column:nth-child(2) li:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    .Footer__column:nth-child(2) a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .Footer__column:nth-child(3) ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    .Footer__column:nth-child(3) li:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    .Footer__column:nth-child(3) a {
+      font-size: 2.4rem;
+      color: #ffffff;
+    }
+
+    .Footer__column p:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    .Footer__column p:nth-child(1) {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+    }
+
+    .Footer__column ul {
+      list-style: none;
+    }
+
+    .Footer__column a:hover {
+      opacity: 0.75;
+    }
+
+    .Footer__line,
+    .Footer__caption {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .Footer__caption {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 1360px) {
+      .HeaderTop__content,
+      .HeaderMid__content,
+      .HeaderBot__content,
+      .Main__content,
+      .Footer__content,
+      .Footer__line,
+      .Footer__caption {
+        padding: 0 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="Header">
+    <div class="HeaderTop">
+      <div class="HeaderTop__content">
+        <nav class="HeaderTop__menu">
+          <ul>
+            <li>
+              <a href="">SAPICA</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="HeaderTop__rrss">
+          <ul>
+            <li>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="HeaderMid">
+      <div class="HeaderMid__content">
+        <figure class="HeaderMid__Logo">
+          <a href="">
+            <img src="https://sapica.com/wp-content/uploads/2021/01/LOGO-SAPICA-1.png" alt="SAPICA logo">
+          </a>
+        </figure>
+        <figure class="HeaderMid__Banner">
+          <a href="">
+            <img src="https://i0.wp.com/fashionnews.com.mx/wp-content/uploads/2022/11/Banner-Header_Final.gif?fit=930%2C120&ssl=1/" alt="">
+          </a>
+        </figure>
+      </div>
+    </div>
+    <div class="HeaderBot">
+      <div class="HeaderBot__content">
+        <nav>
+          <ul>
+            <li>
+              <a href="">INICIO</a>
+            </li>
+            <li>
+              <a href="">SAPICA</a>
+            </li>
+            <li>
+              <a href="">NOTICIAS</a>
+            </li>
+            <li>
+              <a href="">COMUNICADOS</a>
+            </li>
+            <li>
+              <a href="">GALERÍAS</a>
+            </li>
+            <li>
+              <a href="">BLOG</a>
+            </li>
+            <li>
+              <a href="">CONTÁCTENOS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="Main__content">
+      <div class="UltimasNoticias">
+        <div>
+          <p>Últimas noticias:</p>
+        </div>
+        <div>
+          <p>10 años, 10 diseñadores: Una antología de la moda en Guanajuato</p>
+        </div>
+      </div>
+
+      <div class="Carousel">
+        <div class="Carousel__mainImg">
+          <figure>
+            <img src="https://sapica.com/wp-content/uploads/2022/12/Sin-titulo.jpg" alt="">
+            <figcaption>
+              <p>10 años, 10 diseñadores: Una antología de la moda en Guanajuato</p>
+              <p>En los últimos años se ha comenzado a documentar la moda en México a través de artículos en revistas, periódicos, blogs independientes, libros como...</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="Carousel__secondaryImgs">
+          <figure class="Carousel__active"><img src="https://sapica.com/wp-content/uploads/2022/12/Sin-titulo.jpg" alt=""></figure>
+          <figure><img src="https://sapica.com/wp-content/uploads/2022/11/portada-panel-blog.jpg" alt=""></figure>
+          <figure><img src="https://sapica.com/wp-content/uploads/2022/10/Teatro-Bicentenario_Final_Baja.jpg" alt=""></figure>
+          <figure><img src="https://sapica.com/wp-content/uploads/2022/10/Rueda-de-Prensa_1.jpg" alt=""></figure>
+          <figure><img src="https://sapica.com/wp-content/uploads/2022/09/Jaime-Jaime-en-Sapica_baja.jpg" alt=""></figure>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside></aside>
+
+  <footer class="Footer">
+    <div class="Footer__content">
+      <div class="Footer__column">
+        <p>CONTACTO</p>
+        <p><i class="fa-solid fa-location-dot"></i> Blvd. Adolfo López Mateos No. 3401 Ote. Fracc. Julián de Obregón</p>
+        <p><i class="fa-solid fa-phone"></i> +52 (477) 152 9000</p>
+        <p><i class="fa-solid fa-envelope"></i> info@sapica.com</p>
+      </div>
+
+      <div class="Footer__column">
+        <p>MENÚ</p>
+        <ul>
+          <li>
+            <a href="">INICIO</a>
+          </li>
+          <li>
+            <a href="">SAPICA</a>
+          </li>
+          <li>
+            <a href="">NOTICIAS</a>
+          </li>
+          <li>
+            <a href="">COMUNICADOS</a>
+          </li>
+          <li>
+            <a href="">GALERÍAS</a>
+          </li>
+          <li>
+            <a href="">BLOG</a>
+          </li>
+          <li>
+            <a href="">CONTÁCTENOS</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="Footer__column">
+        <p>REDES SOCIALES</p>
+        <ul>
+          <li>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="Footer__line">
+      <hr>
+    </div>
+    <div class="Footer__caption">
+      <p>© 2022 SAPICA Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/2356ab5590.js" crossorigin="anonymous"></script>
+</body>
+</html>
